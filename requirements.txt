@@ -1,0 +1,4 @@
+git+https://github.com/AmosQu39/openai.git@main
+git+https://github.com//AmosQu39/streamlit.git@main
+git+https://github.com//AmosQu39/streamlit_chat.git@main
+git+https://github.com//AmosQu39/streamlit_modal.git@main
