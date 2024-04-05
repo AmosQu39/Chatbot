@@ -13,6 +13,7 @@ st.markdown("<h1 style='text-align: center;'>Guess who I am 😬</h1>", unsafe_a
 openai.api_key = "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"
 content1="Opps! Your voice is finally indistinguishable in the digital world!"
 Counts=0
+Limits=15+random.randint(0,5)
 
 # Initialise session state variables
 if 'generated' not in st.session_state:
@@ -133,9 +134,9 @@ if st.session_state['generated']:
             message(st.session_state["generated"][i], key=str(i))
 
             st.write(
-                f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}; This conversation has been going for {Counts} times")
+                f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}; This conversation has been going for {Counts} times. It may continue for another {Limits-Counts} times")
             counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f},")
-        if Counts > 1:
+        if Counts > Limits:
             st.session_state['generated'] = []
             st.session_state['past'] = []
             st.session_state['messages'] = [
@@ -143,14 +144,15 @@ if st.session_state['generated']:
             ]
 
 
-            time.sleep(3)
+            time.sleep(5)
             #st.markdown(f'<p style="color:{'#f93b12'};font-size:24px;border-radius:2%;">{content1}</p>', unsafe_allow_html=True)
             #st.markdown(f'<p style="color:{'#f93b12'};font-size:24px;">{content1}</p>')
             #st.markdown(f':red[Opps! Your voice is becoming indistinguishable in the digital world!]')
             st.warning(f':red[Opps! Your voice is becoming indistinguishable in the digital world!]')
             #st.markdown(f'<p style="font-family:Courier; color:Red; font-size: 28px;">{"Opps! Your voice is becoming indistinguishable in the digital world!"}</p>')
-            Counts = 0
-            time.sleep(3)
+            Limits = 3+random.randint(0,3)
+            Counts=0
+            time.sleep(5)
             st.rerun()
             # st.stop()
             # clear_btn_click=st.button("See you next time!",key="confirm")
