@@ -13,7 +13,7 @@ st.markdown("<h1 style='text-align: center;'>Guess who I am 😬</h1>", unsafe_a
 openai.api_key = "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"
 content1="Opps! Your voice is finally indistinguishable in the digital world!"
 Counts=0
-Limits=15+random.randint(0,5)
+Limits=10
 
 # Initialise session state variables
 if 'generated' not in st.session_state:
@@ -150,7 +150,7 @@ if st.session_state['generated']:
             #st.markdown(f':red[Opps! Your voice is becoming indistinguishable in the digital world!]')
             st.warning(f':red[Opps! Your voice is becoming indistinguishable in the digital world!]')
             #st.markdown(f'<p style="font-family:Courier; color:Red; font-size: 28px;">{"Opps! Your voice is becoming indistinguishable in the digital world!"}</p>')
-            Limits = 3+random.randint(0,3)
+            Limits = 3
             Counts=0
             time.sleep(5)
             st.rerun()
