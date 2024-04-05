@@ -10,7 +10,7 @@ st.markdown("<h1 style='text-align: center;'>Guess who I am 😬</h1>", unsafe_a
 
 # Set org ID and API key
 # openai.organization = "<YOUR_OPENAI_ORG_ID>"
-openai.api_key = "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"
+openai.api_key = "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"
 content1="Opps! Your voice is finally indistinguishable in the digital world!"
 Counts=0
 Limits=10
