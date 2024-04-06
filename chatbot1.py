@@ -16,7 +16,7 @@ def mkdir(path):
     if not folder:
         os.mkdir(path)
 
-mkdir(save0)
+#mkdir(save0)
 
 def save_to_file(file_name,cont):
     fh=open(file_name,'a')
@@ -164,9 +164,9 @@ if st.session_state['generated']:
             Counts+=1
             if Counts< Limits:
                 message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
-                save_to_file(save_path1,st.session_state["past"][i])
+                #save_to_file(save_path1,st.session_state["past"][i])
                 message(st.session_state["generated"][i], key=str(i))
-                save_to_file(save_path2,st.session_state["generated"][i])
+                #save_to_file(save_path2,st.session_state["generated"][i])
                 st.write(
                     f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}; This conversation has been going for {Counts} times; It may continue for another {Limits-Counts} round.")
                 counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f},")
