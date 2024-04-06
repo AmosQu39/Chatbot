@@ -29,7 +29,7 @@ st.markdown("<h1 style='text-align: center;'>What do you want to know 😬</h1>"
 
 # Set org ID and API key
 # openai.organization = "<YOUR_OPENAI_ORG_ID>"
-openai.api_key = my-api-key
+openai.api_key = my_db.connect(**st.secrets.db_credentials)
 content1="Opps! Your voice is finally indistinguishable in the digital world!"
 Counts=0
 Limits=3+random.randint(0,1)
